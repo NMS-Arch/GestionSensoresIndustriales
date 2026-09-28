@@ -35,6 +35,7 @@ namespace View {
 			}
 		}
 	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::Label^ label2;
 	protected:
 
 	private:
@@ -51,6 +52,7 @@ namespace View {
 		void InitializeComponent(void)
 		{
 			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -64,12 +66,26 @@ namespace View {
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Hola OPERADOR";
 			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label2->Location = System::Drawing::Point(200, 222);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(231, 36);
+			this->label2->TabIndex = 1;
+			this->label2->Text = L"Prueba GITHUB";
+			// 
 			// Prueba_operador
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(669, 366);
+			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
+			this->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->Name = L"Prueba_operador";
 			this->Text = L"Prueba_operador";
 			this->ResumeLayout(false);
