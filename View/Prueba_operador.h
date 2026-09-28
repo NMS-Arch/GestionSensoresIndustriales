@@ -82,6 +82,17 @@ namespace View {
 			// label3
 			// 
 			this->label3->AutoSize = true;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label3->Location = System::Drawing::Point(246, 160);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(432, 31);
+			this->label3->TabIndex = 2;
+			this->label3->Text = L"SUPUESTA PRUEBA DE RAMA 2";
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
 			this->label3->Location = System::Drawing::Point(207, 308);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(73, 16);
@@ -92,7 +103,7 @@ namespace View {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(669, 366);
+			this->ClientSize = System::Drawing::Size(844, 446);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
