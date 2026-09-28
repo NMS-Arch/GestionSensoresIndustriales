@@ -78,24 +78,16 @@ namespace View {
 			this->label2->Size = System::Drawing::Size(231, 36);
 			this->label2->TabIndex = 1;
 			this->label2->Text = L"Prueba GITHUB";
+			this->label2->Click += gcnew System::EventHandler(this, &Prueba_operador::label2_Click);
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(246, 160);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(432, 31);
-			this->label3->TabIndex = 2;
-			this->label3->Text = L"SUPUESTA PRUEBA DE RAMA 2";
-			// 
-			// label3
-			// 
-			this->label3->AutoSize = true;
 			this->label3->Location = System::Drawing::Point(207, 308);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(73, 16);
+			this->label3->Size = System::Drawing::Size(148, 31);
 			this->label3->TabIndex = 2;
 			this->label3->Text = L"PRUEBA 3";
 			// 
@@ -116,5 +108,7 @@ namespace View {
 
 		}
 #pragma endregion
+	private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
 	};
 }
