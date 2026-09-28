@@ -36,6 +36,7 @@ namespace View {
 		}
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::Label^ label3;
 	protected:
 
 	private:
@@ -53,6 +54,7 @@ namespace View {
 		{
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -77,11 +79,21 @@ namespace View {
 			this->label2->TabIndex = 1;
 			this->label2->Text = L"Prueba GITHUB";
 			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Location = System::Drawing::Point(207, 308);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(73, 16);
+			this->label3->TabIndex = 2;
+			this->label3->Text = L"PRUEBA 3";
+			// 
 			// Prueba_operador
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(669, 366);
+			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
