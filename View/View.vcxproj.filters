@@ -18,9 +18,21 @@
     <ClCompile Include="Sensores.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MyForm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Prueba_operador.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sensores.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MyForm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Prueba_operador.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

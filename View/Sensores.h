@@ -1,6 +1,6 @@
 #pragma once
 
-namespace View {
+namespace View{
 
 	using namespace System;
 	using namespace System::ComponentModel;
@@ -49,7 +49,7 @@ namespace View {
 		}
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Label^ label2;
-	private: System::Windows::Forms::RadioButton^ radioButton1;
+
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::TextBox^ textBox1;
@@ -63,6 +63,13 @@ namespace View {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column5;
 	private: System::Windows::Forms::NumericUpDown^ numericUpDown1;
 	private: System::Windows::Forms::ComboBox^ comboBox1;
+	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::Button^ button3;
+	private: System::Windows::Forms::Button^ button4;
+	private: System::Windows::Forms::Button^ button5;
+	private: System::Windows::Forms::TextBox^ textBox2;
+	private: System::Windows::Forms::Label^ label4;
+	private: System::Windows::Forms::CheckBox^ checkBox1;
 	protected:
 
 	private:
@@ -80,7 +87,6 @@ namespace View {
 		{
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->radioButton1 = (gcnew System::Windows::Forms::RadioButton());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
@@ -92,6 +98,13 @@ namespace View {
 			this->Column5 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->numericUpDown1 = (gcnew System::Windows::Forms::NumericUpDown());
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
+			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->button4 = (gcnew System::Windows::Forms::Button());
+			this->button5 = (gcnew System::Windows::Forms::Button());
+			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->BeginInit();
 			this->SuspendLayout();
@@ -115,18 +128,6 @@ namespace View {
 			this->label2->TabIndex = 1;
 			this->label2->Text = L"Tipo";
 			// 
-			// radioButton1
-			// 
-			this->radioButton1->AutoSize = true;
-			this->radioButton1->Location = System::Drawing::Point(62, 172);
-			this->radioButton1->Name = L"radioButton1";
-			this->radioButton1->Size = System::Drawing::Size(69, 20);
-			this->radioButton1->TabIndex = 4;
-			this->radioButton1->TabStop = true;
-			this->radioButton1->Text = L"Activar";
-			this->radioButton1->UseVisualStyleBackColor = true;
-			this->radioButton1->CheckedChanged += gcnew System::EventHandler(this, &Sensores::radioButton1_CheckedChanged);
-			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
@@ -139,7 +140,7 @@ namespace View {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(669, 185);
+			this->button1->Location = System::Drawing::Point(495, 51);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(75, 23);
 			this->button1->TabIndex = 5;
@@ -161,11 +162,11 @@ namespace View {
 				this->Column1,
 					this->Column2, this->Column3, this->Column4, this->Column5
 			});
-			this->dataGridView1->Location = System::Drawing::Point(62, 236);
+			this->dataGridView1->Location = System::Drawing::Point(62, 286);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(682, 197);
+			this->dataGridView1->Size = System::Drawing::Size(804, 197);
 			this->dataGridView1->TabIndex = 6;
 			// 
 			// Column1
@@ -213,23 +214,100 @@ namespace View {
 			// comboBox1
 			// 
 			this->comboBox1->FormattingEnabled = true;
+			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Temperatura", L"Presion", L"Proximidad" });
 			this->comboBox1->Location = System::Drawing::Point(250, 98);
 			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(121, 24);
+			this->comboBox1->Size = System::Drawing::Size(145, 24);
 			this->comboBox1->TabIndex = 8;
+			this->comboBox1->Text = L"Seleccione el tipo";
+			this->comboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &Sensores::comboBox1_SelectedIndexChanged);
+			// 
+			// button2
+			// 
+			this->button2->Location = System::Drawing::Point(495, 94);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(75, 23);
+			this->button2->TabIndex = 9;
+			this->button2->Text = L"Listar";
+			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &Sensores::button2_Click);
+			// 
+			// button3
+			// 
+			this->button3->Location = System::Drawing::Point(744, 49);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(80, 37);
+			this->button3->TabIndex = 10;
+			this->button3->Text = L"Consultar";
+			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &Sensores::button3_Click);
+			// 
+			// button4
+			// 
+			this->button4->Location = System::Drawing::Point(741, 101);
+			this->button4->Name = L"button4";
+			this->button4->Size = System::Drawing::Size(83, 30);
+			this->button4->TabIndex = 11;
+			this->button4->Text = L"Modificar";
+			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &Sensores::button4_Click);
+			// 
+			// button5
+			// 
+			this->button5->Location = System::Drawing::Point(741, 148);
+			this->button5->Name = L"button5";
+			this->button5->Size = System::Drawing::Size(83, 33);
+			this->button5->TabIndex = 12;
+			this->button5->Text = L"Eliminar";
+			this->button5->UseVisualStyleBackColor = true;
+			this->button5->Click += gcnew System::EventHandler(this, &Sensores::button5_Click);
+			// 
+			// textBox2
+			// 
+			this->textBox2->Location = System::Drawing::Point(844, 101);
+			this->textBox2->Name = L"textBox2";
+			this->textBox2->Size = System::Drawing::Size(80, 22);
+			this->textBox2->TabIndex = 13;
+			// 
+			// label4
+			// 
+			this->label4->AutoSize = true;
+			this->label4->Location = System::Drawing::Point(851, 70);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(63, 16);
+			this->label4->TabIndex = 14;
+			this->label4->Text = L"Inserte ID";
+			this->label4->Click += gcnew System::EventHandler(this, &Sensores::label4_Click);
+			// 
+			// checkBox1
+			// 
+			this->checkBox1->AutoSize = true;
+			this->checkBox1->Location = System::Drawing::Point(62, 181);
+			this->checkBox1->Name = L"checkBox1";
+			this->checkBox1->Size = System::Drawing::Size(82, 20);
+			this->checkBox1->TabIndex = 15;
+			this->checkBox1->Text = L"Activado";
+			this->checkBox1->UseVisualStyleBackColor = true;
+			this->checkBox1->CheckedChanged += gcnew System::EventHandler(this, &Sensores::checkBox1_CheckedChanged);
 			// 
 			// Sensores
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(849, 457);
+			this->ClientSize = System::Drawing::Size(1060, 514);
+			this->Controls->Add(this->checkBox1);
+			this->Controls->Add(this->label4);
+			this->Controls->Add(this->textBox2);
+			this->Controls->Add(this->button5);
+			this->Controls->Add(this->button4);
+			this->Controls->Add(this->button3);
+			this->Controls->Add(this->button2);
 			this->Controls->Add(this->comboBox1);
 			this->Controls->Add(this->numericUpDown1);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label3);
-			this->Controls->Add(this->radioButton1);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->Name = L"Sensores";
@@ -245,6 +323,10 @@ namespace View {
 	}
 	private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
+
+	private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+
 	private: System::Void radioButton1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
 
@@ -265,7 +347,7 @@ namespace View {
 			double rangoMax = Convert::ToDouble(numericUpDown1->Value);
 
 			// RadioButton: Si rbtActivo está marcado (true), es "Activo", sino "Inactivo"
-			String^ estado = radioButton1->Checked ? "Activo" : "Inactivo";
+			String^ estado = checkBox1->Checked ? "Activo" : "Inactivo";
 
 			// 3. ENLACE CON MODELO: Creamos el objeto
 			SensorIndustrial^ nuevoSensor = gcnew SensorIndustrial();
@@ -285,7 +367,7 @@ namespace View {
 			textBox1->Clear();
 			comboBox1->SelectedIndex = -1; // Deselecciona el ComboBox
 			numericUpDown1->Value = 0;
-			radioButton1->Checked = true;   // Valor por defecto
+			checkBox1->Checked = false;   // Valor por defecto
 
 			// TODO: Aquí llamaremos luego a la función para actualizar el DataGridView
 		}
@@ -296,7 +378,174 @@ namespace View {
 	}
 
 
+	// Agregar
+
+	private: System::Void DataGridView(System::Object^ sender, System::EventArgs^ e) {
+
+
+
+
+	}
+
+	
+	
+	// Enlistar
+	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+
+		try {
+			// 1. Limpiar la tabla antes de cargar nuevos datos para no duplicar filas
+			dataGridView1->Rows->Clear();
+
+			// 2. Obtener la lista de sensores desde el Controlador
+			List<SensorIndustrial^>^ listaActual = this->controlador_GUI->ObtenerTodos();
+
+			// 3. Recorrer la lista y poblar el DataGridView
+			for each (SensorIndustrial ^ s in listaActual) {
+				// Add() recibe un arreglo de objetos que corresponden a las columnas que creaste en el IDE:
+				// [0]: ID, [1]: Nombre, [2]: Tipo, [3]: RangoMax, [4]: Estado
+				dataGridView1->Rows->Add(
+					s->id,
+					s->nombre,
+					s->tipo,
+					s->rango_maximo,
+					s->estado
+				);
+			}
+		}
+		catch (Exception^ ex) {
+			// Buena práctica: Si algo falla al traer los datos, mostramos el error
+			MessageBox::Show("Error al cargar la lista: " + ex->Message,
+				"Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		}
+
+	}
+
+
+
+	//Consultar
+	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+
+
+		try {
+			// Validación visual: Verificar que se haya ingresado un ID
+			if (String::IsNullOrWhiteSpace(label4->Text)) {
+				MessageBox::Show("Por favor, ingrese un ID para buscar.", "Validación", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+				return;
+			}
+
+			int idBuscado = Convert::ToInt32(textBox2->Text);
+
+			// Llamamos al controlador. Si no existe, lanzará la excepción y saltará al "catch"
+			SensorIndustrial^ encontrado = this->controlador_GUI->ConsultarPorId(idBuscado);
+
+			// Si lo encuentra, autocompletamos los campos visuales con la data del objeto
+			textBox1->Text = encontrado->nombre;
+			comboBox1->Text = encontrado->tipo;
+			numericUpDown1->Value = Convert::ToDecimal(encontrado->rango_maximo);
+
+			/*if (encontrado->estado == "Activo") {
+				radioButton1->Checked = true;
+			}
+			else {
+				rbtInactivo->Checked = true;
+			}*/
+
+			if (encontrado->estado == "Activo") {
+				checkBox1->Checked = true;
+			}
+			else {
+				checkBox1->Checked = false;
+			}
 	
 
-	};
+		}
+		catch (FormatException^) {
+			MessageBox::Show("El ID debe ser un número entero válido.", "Error de Formato", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		}
+		catch (Exception^ ex) {
+			MessageBox::Show(ex->Message, "Error de Búsqueda", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		}
+
+
+	}
+
+
+	
+
+	// Modificar
+
+	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+
+		try {
+			if (String::IsNullOrWhiteSpace(textBox2->Text) || String::IsNullOrWhiteSpace(textBox2->Text)) {
+				MessageBox::Show("Consulte un ID válido y asegúrese de que los campos no estén vacíos.", "Validación", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+				return;
+			}
+
+			// Empaquetamos los datos actualizados en un nuevo objeto
+			SensorIndustrial^ sensorModificado = gcnew SensorIndustrial();
+			sensorModificado->id = Convert::ToInt32(textBox2->Text); // El ID es crucial para saber a quién modificar
+			sensorModificado->nombre = textBox1->Text;
+			sensorModificado->tipo = comboBox1->Text;
+			sensorModificado->rango_maximo= Convert::ToDouble(numericUpDown1->Value);
+			sensorModificado->estado= checkBox1->Checked ? "Activo" : "Inactivo";
+
+			// Enviamos al controlador
+			this->controlador_GUI->Modificar(sensorModificado);
+
+			MessageBox::Show("Sensor modificado exitosamente.", "Operación Exitosa", MessageBoxButtons::OK, MessageBoxIcon::Information);
+
+			// Truco: Refrescamos la tabla simulando un clic en el botón Listar
+			button2_Click(nullptr, nullptr);
+		}
+		catch (Exception^ ex) {
+			MessageBox::Show(ex->Message, "Error al Modificar", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		}
+
+
+	}
+
+
+
+	
+
+	// Eliminar
+
+	private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+
+		try {	//textbox2 es el buscar id
+			if (String::IsNullOrWhiteSpace(textBox2->Text)) {
+				MessageBox::Show("Ingrese el ID del sensor que desea eliminar.", "Validación", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+				return;
+			}
+
+			int idEliminar = Convert::ToInt32(textBox2->Text);
+
+			// Podemos agregar una confirmación visual extra (Buena práctica de UI)
+			System::Windows::Forms::DialogResult respuesta = MessageBox::Show("¿Está seguro que desea eliminar el sensor ID " + idEliminar + "?","Confirmar Eliminación", MessageBoxButtons::YesNo, MessageBoxIcon::Question);
+
+			if (respuesta == System::Windows::Forms::DialogResult::Yes) {
+				this->controlador_GUI->Eliminar(idEliminar);
+				MessageBox::Show("Sensor eliminado.", "Operación Exitosa", MessageBoxButtons::OK, MessageBoxIcon::Information);
+
+				textBox2->Clear(); // Limpiamos la búsqueda
+				button2_Click(nullptr, nullptr); // Refrescamos la tabla
+			}
+		}
+		catch (Exception^ ex) {
+			MessageBox::Show(ex->Message, "Error al Eliminar", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		}
+
+
+
+	}
+
+
+
+
+private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void checkBox1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+};
 }

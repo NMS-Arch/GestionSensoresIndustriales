@@ -132,14 +132,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="MyForm.cpp" />
+    <ClCompile Include="Prueba_operador.cpp" />
     <ClCompile Include="Sensores.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="MyForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Prueba_operador.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Sensores.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="MyForm.resx">
+      <DependentUpon>MyForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prueba_operador.resx">
+      <DependentUpon>Prueba_operador.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Sensores.resx">
       <DependentUpon>Sensores.h</DependentUpon>
     </EmbeddedResource>
